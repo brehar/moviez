@@ -1,0 +1,12 @@
+<div class="row">
+    <h1 class="text-center">Current Top Movies</h1>
+</div>
+
+<div class="row">
+    <div class="col-md-4 col-sm-12" ng-repeat="movie in topMovies">
+        <div class="well text-center">
+            <a ui-sref="topdetails({id: movie.id})"><img ng-src="https://image.tmdb.org/t/p/w150{{ movie.poster_path }}"></a>
+            <br><a ui-sref="topdetails({id: movie.id})">{{ movie.original_title }}</a>
+        </div>
+    </div>
+</div>

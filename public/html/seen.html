@@ -1,0 +1,20 @@
+<div class="row">
+    <table class="table">
+        <thead>
+            <tr>
+                <th></th>
+                <th>Title</th>
+                <th>Favorite</th>
+                <th>Rating</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="movie in seenMovies">
+                <td><a ui-sref="searchdetails({id: movie.imdbId})"><img ng-src="{{ movie.posterUrl }}" class="resize"></a></td>
+                <td><a ui-sref="searchdetails({id: movie.imdbId})">{{ movie.name }}</a></td>
+                <td><span ng-show="movie.favorite === 1" class="glyphicon glyphicon-star"></span><span ng-show="movie.favorite === 0 || !movie.favorite" class="glyphicon glyphicon-star-empty"></span></td>
+                <td><span ng-show="movie.rating">{{ movie.rating }}</span></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

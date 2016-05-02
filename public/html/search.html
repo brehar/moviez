@@ -1,0 +1,8 @@
+<div class="row">
+    <div class="col-md-4 col-sm-12" ng-repeat="result in searchResults">
+        <div class="well text-center">
+            <a ui-sref="searchdetails({id: result.imdbID})"><img class="resize" ng-src="{{ result.Poster }}"></a>
+            <br><a ui-sref="searchdetails({id: result.imdbID})">{{ result.Title }} ({{ result.Year }})</a>
+        </div>
+    </div>
+</div>

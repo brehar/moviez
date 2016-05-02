@@ -1,0 +1,18 @@
+<div class="row">
+    <table class="table">
+        <thead>
+        <tr>
+            <th></th>
+            <th>Title</th>
+            <th>Rating</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="movie in favoriteMovies">
+            <td><a ui-sref="searchdetails({id: movie.imdbId})"><img ng-src="{{ movie.posterUrl }}" class="resize"></a></td>
+            <td><a ui-sref="searchdetails({id: movie.imdbId})">{{ movie.name }}</a></td>
+            <td><span ng-show="movie.rating">{{ movie.rating }}</span></td>
+        </tr>
+        </tbody>
+    </table>
+</div>

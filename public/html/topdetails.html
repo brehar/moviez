@@ -1,0 +1,31 @@
+<div class="row">
+    <h1 class="text-center">{{ title }}</h1>
+</div>
+
+<div class="row">
+    <div class="col-md-5 col-sm-12 text-center">
+        <img ng-src="{{ poster }}">
+    </div>
+    <div class="col-md-7 col-sm-12">
+        <span class="underline">Genres</span>:
+        <ul>
+            <li ng-repeat="genre in genres">{{ genre.name }}</li>
+        </ul>
+        <br><span class="bold">Overview:</span> {{ topMovie.overview }}
+        <br><br><span class="bold">Release Date:</span> {{ topMovie.release_date | date }}
+        <br><br><span class="bold">Runtime:</span> {{ topMovie.runtime }} minutes
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-4 col-md-offset-5">
+        <button class="btn btn-primary" ng-show="!seen" ng-click="saveSeenMovie()">I've Seen This Movie</button>
+        <button class="btn btn-primary" ng-show="seen" ng-click="removeMovie()">I Haven't Seen This Movie</button>
+        <button ng-show="seen" ng-click="toggleFavorite()" type="button" class="btn btn-default"><span ng-show="!favorite" class="glyphicon glyphicon-star-empty"> Favorite</span><span ng-show="favorite" class="glyphicon glyphicon-star"> Favorite</span></button>
+        <div class="form-group" ng-show="seen">
+            <label for="rating">Rating</label>
+            <input type="number" class="form-control" id="rating" min="0" max="10" step="1" ng-click="updateRating()" ng-model="rating">
+        </div>
+        <br><br>
+    </div>
+</div>
